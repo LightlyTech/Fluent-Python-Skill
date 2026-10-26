@@ -96,7 +96,6 @@ Implement as much functionality as possible in HTML; use Python to supplement an
 - [ ] All `"""` are closed in pairs
 - [ ] Colors go through CSS variables, and theme switching has transitions
 - [ ] Interface readiness is checked before JS calls Python
-- [ ] Window buttons are bound to Python APIs
 
 ## Packaging Configuration
 
