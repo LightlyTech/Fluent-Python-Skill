@@ -1,6 +1,6 @@
 ---
-name: Fluent-Python-App
-description: 生成 Windows 11 Fluent 风格的、单文件 Python 桌面应用。HTML/CSS/JS 作为界面字符串嵌入 Python 文件，通过PyWry库加载，在原生窗口内显示而非浏览器打开。当用户提到 "Python 桌面应用"、"Fluent 风格 Python GUI"、"HTML 作为界面嵌入 Python 窗口"、"Windows 11 风格桌面应用" 时使用。HTML 字符串防止三引号未闭合，保证输出完整可运行py代码。
+name: fluent-pywebview-app
+description: 生成 Windows 11 Fluent 风格的、单文件 Python + pywebview 桌面应用。HTML/CSS/JS 作为界面字符串嵌入 Python 文件，在原生窗口内显示而非浏览器打开。当用户提到 "pywebview 桌面应用"、"Fluent 风格 Python GUI"、"HTML 作为界面嵌入 Python 窗口"、"单文件 Python 桌面程序"、"Windows 11 风格桌面应用" 时使用。HTML 字符串防止三引号未闭合，保证输出完整可运行py代码。
 ---
 
 # Fluent Python 桌面应用生成器
@@ -9,7 +9,7 @@ description: 生成 Windows 11 Fluent 风格的、单文件 Python 桌面应用�
 
 当用户要求以下任一场景时启用本技能：
 
-- 用 Python 创建桌面应用
+- 用 pywebview 创建桌面应用
 - 用 HTML/CSS/JS 做界面
 - Windows 11 Fluent Design 风格
 - 单文件 Python 桌面程序，HTML 以字符串形式内嵌
@@ -19,7 +19,7 @@ description: 生成 Windows 11 Fluent 风格的、单文件 Python 桌面应用�
 
 1. 必须输出完整、可直接保存为 `.py` 并运行的代码。
 2. 禁止出现 `...`、`省略`、`其余同上`、`TODO`、`此处略`。
-3. 文件顶部注释写明依赖安装命令（如 `pip install PyWry`），使用PyWry库加载Html显示。
+3. 文件顶部注释写明依赖安装命令（如 `pip install pywebview`）。
 4. 所有三引号必须成对闭合；所有 HTML 标签、`<style>`、`<script>` 必须闭合。
 5. 只写功能的注释，不要其他注释
 
@@ -95,6 +95,7 @@ font-family: "Segoe UI Variable Text", "Segoe UI",
 
 - [ ] 所有 `"""` 成对闭合
 - [ ] 颜色走 CSS 变量，主题切换有过渡
+- [ ] JS 调用 Python 前做了接口就绪检测
 
 ## 打包配置
 
