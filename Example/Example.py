@@ -54,51 +54,51 @@ class Api:
     """Methods exposed to JavaScript through pywebview's js_api bridge."""
 
     def __init__(self, store):
-        self.store = store
-        self.window = None
+        self._store = store
+        self._window = None
         self.maximized = False
 
     def attach(self, window):
-        self.window = window
+        self._window = window
 
     def minimize(self):
-        if self.window is not None:
-            self.window.minimize()
+        if self._window is not None:
+            self._window.minimize()
         return True
 
     def toggle_maximize(self):
         self.maximized = not self.maximized
-        if self.window is not None:
+        if self._window is not None:
             try:
                 if self.maximized:
-                    self.window.maximize()
+                    self._window.maximize()
                 else:
-                    self.window.restore()
+                    self._window.restore()
             except Exception:
                 self.maximized = not self.maximized
         return self.maximized
 
     def close(self):
-        if self.window is not None:
-            self.window.destroy()
+        if self._window is not None:
+            self._window.destroy()
         return True
 
     def load_state(self):
         return {
-            "notes": self.store.data.get("notes", []),
-            "settings": self.store.data.get("settings", {"theme": "light"}),
+            "notes": self._store.data.get("notes", []),
+            "settings": self._store.data.get("settings", {"theme": "light"}),
         }
 
     def save_notes(self, notes):
         if isinstance(notes, list):
-            self.store.data["notes"] = [item for item in notes if isinstance(item, dict)]
-            self.store.save()
+            self._store.data["notes"] = [item for item in notes if isinstance(item, dict)]
+            self._store.save()
         return True
 
     def save_settings(self, settings):
         if isinstance(settings, dict):
-            self.store.data["settings"].update(settings)
-            self.store.save()
+            self._store.data["settings"].update(settings)
+            self._store.save()
         return True
 
     def get_app_info(self):
@@ -978,7 +978,7 @@ def main():
         min_size=(900, 600),
         background_color=LIGHT_BG,
         frameless=True,
-        easy_drag=False,
+        easy_drag=True,
         resizable=True,
         text_select=True,
     )
