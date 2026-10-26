@@ -95,7 +95,6 @@ font-family: "Segoe UI Variable Text", "Segoe UI",
 
 - [ ] 所有 `"""` 成对闭合
 - [ ] 颜色走 CSS 变量，主题切换有过渡
-- [ ] JS 调用 Python 前做了接口就绪检测
 
 ## 打包配置
 
