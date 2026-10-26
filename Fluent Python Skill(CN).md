@@ -1,5 +1,5 @@
 ---
-name: fluent-Python-app
+name: Fluent-Python-App
 description: 生成 Windows 11 Fluent 风格的、单文件 Python 桌面应用。HTML/CSS/JS 作为界面字符串嵌入 Python 文件，通过PyWry库加载，在原生窗口内显示而非浏览器打开。当用户提到 "Python 桌面应用"、"Fluent 风格 Python GUI"、"HTML 作为界面嵌入 Python 窗口"、"Windows 11 风格桌面应用" 时使用。HTML 字符串防止三引号未闭合，保证输出完整可运行py代码。
 ---
 
