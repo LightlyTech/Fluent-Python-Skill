@@ -1,49 +1,48 @@
 ---
-name: fluent-pywebview-app
-description: Generates a Windows 11 Fluent-style, single-file Python + pywebview desktop application. HTML/CSS/JS is embedded as interface strings inside the Python file and displayed in a native window rather than opened in a browser. Use when the user mentions "pywebview desktop app", "Fluent-style Python GUI", "HTML embedded as UI in a Python window", "single-file Python desktop program", or "Windows 11 style desktop app". HTML strings must prevent unclosed triple quotes, ensuring the output is complete, runnable Python code.
+name: Fluent-Python-App
+description: Generate single-file Python desktop applications with Windows 11 Fluent style. The HTML/CSS/JS interface is embedded as a string inside the Python file. The PyWry library loads the content inside a native window instead of opening a web browser. Activate this skill when the user mentions "Python desktop app", "Fluent-style Python GUI", "HTML embedded as interface inside Python window", or "Windows 11-style desktop application". Ensure triple quotes are properly closed so the full runnable Python code is output without truncation.
 ---
 
-# Fluent pywebview Desktop App Generator
+# Fluent Python Desktop App Generator
 
-## When to Use
+## When to Use This Skill
 
-Activate this skill when the user requests any of the following scenarios:
-
-- Creating a desktop app with pywebview
-- Building the UI with HTML/CSS/JS
-- Windows 11 Fluent Design style
-- A single-file Python desktop program with HTML embedded as strings
-- Light/dark theme switching required
+Enable this skill for any of the following scenarios:
+- Building desktop applications with Python
+- Creating UI with HTML/CSS/JS
+- Implementing Windows 11 Fluent Design visual style
+- Building single-file Python desktop programs with embedded HTML strings
+- Adding light/dark theme switching functionality
 
 ## Mandatory Output Requirements
 
-1. Must output complete code that can be saved directly as a `.py` file and run.
-2. No `...`, "omitted", "same as above", `TODO`, or "abbreviated here" placeholders are allowed.
-3. A comment at the top of the file must state the dependency installation command (e.g., `pip install pywebview`).
-4. All triple quotes must be closed in pairs; all HTML tags, `<style>`, and `<script>` blocks must be closed.
-5. Write only functional comments—no other commentary.
+1. Always output complete, runnable code that can be saved directly as a `.py` file.
+2. No `...`, omissions, placeholders like `[omitted]`, `TODO`, or `[code omitted]`.
+3. Include a comment at the top of the file with the installation command: `pip install PyWry`. Use the PyWry library to render HTML content.
+4. All triple quotes must be properly paired and closed. All HTML tags, `<style>`, and `<script>` blocks must be fully closed.
+5. Only include functional code comments; no extra explanatory text.
 
 ## Fluent Design Specifications
 
 ### Color Tokens
 
-Light theme:
-- Background `#F3F3F3`
-- Card `rgba(255,255,255,0.72)`
-- Primary text `#1A1A1A`, secondary `#616161`, tertiary `#8A8A8A`
-- Stroke `rgba(0,0,0,0.06)`, strong stroke `rgba(0,0,0,0.11)`
-- Accent `#0067C0`, accent text `#FFFFFF`
-- Hover `rgba(0,0,0,0.037)`, pressed `rgba(0,0,0,0.074)`
+Light Mode:
+- Background: `#F3F3F3`
+- Card background: `rgba(255,255,255,0.72)`
+- Primary text: `#1A1A1A`; Secondary text: `#616161`; Tertiary text: `#8A8A8A`
+- Border: `rgba(0,0,0,0.06)`; Strong border: `rgba(0,0,0,0.11)`
+- Accent color: `#0067C0`; Accent text: `#FFFFFF`
+- Hover state: `rgba(0,0,0,0.037)`; Pressed state: `rgba(0,0,0,0.074)`
 
-Dark theme:
-- Background `#202020`
-- Card `rgba(255,255,255,0.045)`
-- Primary text `#FFFFFF`, secondary `#C8C8C8`, tertiary `#9A9A9A`
-- Stroke `rgba(255,255,255,0.06)`, strong stroke `rgba(255,255,255,0.11)`
-- Accent `#60CDFF`, accent text `#00334D`
-- Hover `rgba(255,255,255,0.055)`, pressed `rgba(255,255,255,0.09)`
+Dark Mode:
+- Background: `#202020`
+- Card background: `rgba(255,255,255,0.045)`
+- Primary text: `#FFFFFF`; Secondary text: `#C8C8C8`; Tertiary text: `#9A9A9A`
+- Border: `rgba(255,255,255,0.06)`; Strong border: `rgba(255,255,255,0.11)`
+- Accent color: `#60CDFF`; Accent text: `#00334D`
+- Hover state: `rgba(255,255,255,0.055)`; Pressed state: `rgba(255,255,255,0.09)`
 
-All colors must go through CSS variables; theme switching only changes `html[data-theme]`.
+All colors must be defined as CSS variables. Theme switching only modifies the `html[data-theme]` attribute.
 
 ### Typography
 
